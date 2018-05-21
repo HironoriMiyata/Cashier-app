@@ -12,12 +12,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val button: Button = findViewById(R.id.button) as Button
+        button.setOnClickListener(object:View.OnClickListener {
+            override fun onClick(v: View?) {
+                DatabaseScreen()
+            }
+        })
         val button2: Button = findViewById(R.id.button2) as Button
         button2.setOnClickListener(object:View.OnClickListener {
             override fun onClick(v: View?) {
                 cashierScreen()
             }
         })
+    }
+    fun DatabaseScreen(){
+        val intent = Intent(this,DatabaseScreen()::class.java)
+        startActivity(intent)
     }
     fun cashierScreen(){
         val intent = Intent(this,CashierActivity::class.java)

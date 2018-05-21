@@ -11,14 +11,8 @@ class DatabaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_databass)
-        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1).apply {
-            add("Android")
-            add("iOS")
-            add("Windows")
-            add("macOS")
-            add("Unix")
-            add("+") // 追加
-        }
+        val prodcutList:MutableList<String> = databaseProduct()
+        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,prodcutList)
 
         val listView : ListView = findViewById(R.id.listView)
         listView.adapter = arrayAdapter
@@ -54,6 +48,6 @@ class DatabaseActivity : AppCompatActivity() {
         }
 
     }
-    
+
 
 }

@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
     fun DatabaseScreen(){
-        val intent = Intent(this,DatabaseScreen()::class.java)
+        val intent = Intent(this,DatabaseActivity()::class.java)
         startActivity(intent)
     }
     fun cashierScreen(){

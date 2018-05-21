@@ -7,17 +7,29 @@
     tools:context=".MainActivity">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
             >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="商品"
+                    android:textSize="40sp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="25dip" />
+                <ListView
+                    android:id="@+id/listView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="8"
+            android:layout_weight="6"
             >
                 <LinearLayout
                     android:orientation="vertical"

@@ -1,0 +1,41 @@
+diff a/app/src/main/res/layout/activity_cashier.xml b/app/src/main/res/layout/activity_cashier.xml	(rejected hunks)
+@@ -7,17 +7,36 @@
+     tools:context=".MainActivity">
+ 
+         <LinearLayout
+-            android:layout_width="wrap_content"
++            android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:layout_weight="1"
+             >
++
++                <TextView
++                    android:layout_width="match_parent"
++                    android:layout_height="0dp"
++                    android:text="商品"
++                    android:textSize="40sp"
++                    android:layout_weight="1"
++                    />
++
++                <Space
++                    android:layout_width="match_parent"
++                    android:layout_height="25dip" />
++                <ListView
++                    android:id="@+id/listView1"
++                    android:layout_width="wrap_content"
++                    android:layout_height="0dp"
++                    android:layout_weight="9"
++                    />
++
+         </LinearLayout>
+         <LinearLayout
+-            android:layout_width="wrap_content"
++            android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+-            android:layout_weight="8"
++            android:layout_weight="2"
+             >
+                 <LinearLayout
+                     android:orientation="vertical"

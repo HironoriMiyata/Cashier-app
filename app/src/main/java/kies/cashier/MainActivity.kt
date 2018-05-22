@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        StartDatabase()
         val button: Button = findViewById(R.id.button) as Button
         button.setOnClickListener(object:View.OnClickListener {
             override fun onClick(v: View?) {

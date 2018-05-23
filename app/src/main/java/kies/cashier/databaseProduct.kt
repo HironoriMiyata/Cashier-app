@@ -1,9 +1,14 @@
 package kies.cashier
+lateinit var  oldProductList : MutableList<String>
 
 fun startDatabaseProduct():MutableList<String>{
 
- val productList : MutableList<String> =  mutableListOf()
-    productList.add("+")
+    oldProductList = mutableListOf()
+    oldProductList.add("+")
 
-    return productList
+    return oldProductList
+}
+
+fun readProduct(){
+
 }

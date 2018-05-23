@@ -1,6 +1,6 @@
 package kies.cashier
 
-fun databaseProduct():MutableList<String>{
+fun startDatabaseProduct():MutableList<String>{
 
  val productList : MutableList<String> =  mutableListOf()
     productList.add("+")

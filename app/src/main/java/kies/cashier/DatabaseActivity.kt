@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.WindowManager
 import android.widget.*
 
 class DatabaseActivity : AppCompatActivity() {
@@ -23,12 +22,25 @@ class DatabaseActivity : AppCompatActivity() {
         val dialogEditText2 : EditText = inflater.findViewById(R.id.price)
         dialogEditText2.requestFocus()
 
-        val prodcutList:MutableList<String> = databaseProduct()
+        val prodcutList:MutableList<String> = startDatabaseProduct()
 
         val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,prodcutList)
 
         val listView : ListView = findViewById(R.id.listView)
         listView.adapter = arrayAdapter
+
+        val dialog = AlertDialog.Builder(this).apply {
+            setTitle("商品情報の追加")
+            setMessage("商品情報を入力してください")
+            setView(inflater)
+            setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
+                // OKボタンを押したときの処理
+                Toast.makeText(context, "追加しました", Toast.LENGTH_LONG).show()
+                arrayAdapter.insert( "New  "  + dialogEditText.text, arrayAdapter.count - 1)//追加
+                arrayAdapter.notifyDataSetChanged()
+            })
+            setNegativeButton("Cancel", null)
+        }.create()
 
         // 項目をタップしたときの処理
         listView.setOnItemClickListener {parent, view, position, id ->
@@ -41,26 +53,10 @@ class DatabaseActivity : AppCompatActivity() {
 
             // 一番下の項目をタップしたら新しい項目をその項目の上に追加
             if (position == arrayAdapter.count - 1) {
-                val dialog  = AlertDialog.Builder(this).apply {
-                    setTitle("商品情報")
-                    setMessage("商品情報を追加します")
-                    setView(inflater)
-                    setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
-                        // OKをタップしたときの処理
-                        if(dialogEditText.text == null|| dialogEditText2.text == null){
-                            Toast.makeText(context, "商品名もしくは金額を記入してください", Toast.LENGTH_LONG).show()
-                        } else {
-                            Toast.makeText(context, "商品情報を追加しました", Toast.LENGTH_LONG).show()
-                            arrayAdapter.insert(""+dialogEditText.text, arrayAdapter.count - 1)//追加
-                            arrayAdapter.notifyDataSetChanged()
-                        }
-                    })
-                    setNegativeButton("Cancel", null)
-                }.create()
-                dialog.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 
                 dialog.show()
-                }
+
+                        }
 
             }
 

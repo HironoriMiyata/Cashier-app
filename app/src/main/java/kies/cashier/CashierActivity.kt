@@ -2,10 +2,9 @@ package kies.cashier
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.View
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_cashier.*
+
 
 class CashierActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

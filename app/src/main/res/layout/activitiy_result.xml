@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="利益"
+    android:id="@+id/profit"
+    android:textSize="40sp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dip" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="粗利"
+        android:id="@+id/gross"
+        android:textSize="40sp" />
+</LinearLayout>

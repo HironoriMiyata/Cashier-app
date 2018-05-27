@@ -2,10 +2,9 @@ package kies.cashier
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_cashier.*
 
 class CashierActivity : AppCompatActivity() {
@@ -20,7 +19,13 @@ class CashierActivity : AppCompatActivity() {
 
         val productTextView:TextView = findViewById(R.id.pricetextview)
         val allProductTextView:TextView = findViewById(R.id.allpricetextview)
-
+        var addMonmy = 0
+        val monmyTextView:TextView = findViewById(R.id.azukari)
+        val oturiTextView:TextView = findViewById(R.id.oturi)
+        val moneyList:MutableList<String>  = mutableListOf("1","5","10","50","100","500","1000","2000","5000","10000")
+        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,moneyList)
+        val listView : ListView = findViewById(R.id.money)
+        listView.adapter = arrayAdapter
         var sum = 0
         var all = sum
         var add =0
@@ -31,11 +36,11 @@ class CashierActivity : AppCompatActivity() {
                 add = Integer.parseInt(addEditText.getText().toString())
                 kosuu = Integer.parseInt(kosuuEditText.getText().toString())
                 sum = sum + add * kosuu
-                productTextView.setText(Integer.toString(sum))
+                productTextView.setText("合計"+ Integer.toString(sum))
                 all = sum
-                allProductTextView.setText(Integer.toString(all))
+                allProductTextView.setText("売り上げ合計"+ Integer.toString(all))
                 kosuuEditText.setText("1")
-                addEditText.setText("")
+                addEditText.setText("0")
 
             }
         })
@@ -45,13 +50,43 @@ class CashierActivity : AppCompatActivity() {
                 add = Integer.parseInt(addEditText.getText().toString())
                 kosuu = Integer.parseInt(kosuuEditText.getText().toString())
                 sum = sum - add * kosuu
-                productTextView.setText(Integer.toString(sum))
+                productTextView.setText("合計"+ Integer.toString(sum))
                 all = sum
-                allProductTextView.setText(Integer.toString(all))
+                allProductTextView.setText("売り上げ合計"+ Integer.toString(all))
                 kosuuEditText.setText("1")
-                addEditText.setText("")
+                addEditText.setText("0")
+            }
+        })
+        val resetDelete: Button = findViewById(R.id.reset) as Button
+        resetDelete.setOnClickListener(object:View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                kosuu = Integer.parseInt(kosuuEditText.getText().toString())
+                sum = 0
+                addMonmy = 0
+                productTextView.setText("合計"+ Integer.toString(sum))
+                allProductTextView.setText("売り上げ合計"+ Integer.toString(all))
+                monmyTextView.setText("預り金"+ Integer.toString(addMonmy))
+                oturiTextView.setText("お釣り"+ Integer.toString(addMonmy - sum))
+                kosuuEditText.setText("1")
+                addEditText.setText("0")
             }
         })
 
-    }
+
+
+        listView.setOnItemClickListener { parent, view, position, id ->
+
+            // 項目の TextView を取得
+            val itemTextView: TextView = view.findViewById(android.R.id.text1)
+
+            var getMonwy =Integer.parseInt(itemTextView.getText().toString())
+            addMonmy = addMonmy + getMonwy
+            monmyTextView.setText("預り金"+ Integer.toString(addMonmy))
+            oturiTextView.setText("お釣り"+ Integer.toString(addMonmy - sum))
+        }
+
+        }
+
+
 }

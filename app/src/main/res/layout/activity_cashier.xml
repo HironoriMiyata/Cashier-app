@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="4"
+            android:layout_weight="2"
             >
                 <LinearLayout
                     android:orientation="vertical"
@@ -47,6 +47,7 @@
                             android:gravity="right|center_vertical"
                             android:textSize="40sp"
                             android:layout_weight="1"
+
                             android:hint="売り上げ合計"
                             />
                         <TextView
@@ -70,6 +71,7 @@
                             android:layout_marginBottom="16dp"
                             android:fontFamily="sans-serif"
                             android:layout_weight="1"
+                            android:text="0"
                             android:hint="値段"/>
                         <EditText
                             android:id="@+id/kosuu"
@@ -122,14 +124,21 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="お預かり"
+                    android:id="@+id/azukari"
                     android:textSize="40sp" />
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="25dip" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="お釣り"
+                    android:id="@+id/oturi"
+                    android:textSize="40sp" />
                 <ListView
-                    android:id="@+id/listView2"
+                    android:id="@+id/money"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
         </LinearLayout>

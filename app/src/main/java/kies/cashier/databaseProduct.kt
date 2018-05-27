@@ -6,9 +6,9 @@ lateinit var  oldProductList : MutableList<String>
 
 fun startDatabaseProduct():MutableList<String>{
     oldProductList = mutableListOf()
+    //val read =  ReadProdcut()
+    //oldProductList =  read.readProduct("product")
 
-   var addName:String = "Nw"
-    oldProductList.add(addName)
     oldProductList.add("+")
 
     return oldProductList

@@ -56,9 +56,9 @@ class DatabaseActivity : AppCompatActivity() {
 
                 dialog.show()
 
-                        }
-
             }
+
+        }
 
 
         // 項目を長押ししたときの処理

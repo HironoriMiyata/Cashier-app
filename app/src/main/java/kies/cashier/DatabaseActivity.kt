@@ -55,7 +55,8 @@ class DatabaseActivity : AppCompatActivity() {
             if (position == arrayAdapter.count - 1) {
 
                 dialog.show()
-
+                dialogEditText.setText("")
+                dialogEditText2.setText("")
             }
 
         }

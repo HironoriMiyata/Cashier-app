@@ -39,216 +39,79 @@
                     android:layout_centerHorizontal="true"
                     android:layout_weight="1"
                     android:id="@+id/linearLayout">
-
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="0"
-                            android:id="@+id/textView"
+                            android:id="@+id/allpricetextview"
                             android:gravity="right|center_vertical"
                             android:textSize="40sp"
+                            android:layout_weight="1"
+                            android:hint="売り上げ合計"
                             />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_weight="5"
-                    >
-
-                        <LinearLayout
-                            android:orientation="horizontal"
+                        <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1">
-
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="AC"
-                                            android:id="@+id/buttonAC"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="7"
-                                            android:id="@+id/button7"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="4"
-                                            android:id="@+id/button4"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="1"
-                                            android:id="@+id/button1"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="00"
-                                            android:id="@+id/button00"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1">
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="C"
-                                            android:id="@+id/buttonC"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="8"
-                                            android:id="@+id/button8"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="5"
-                                            android:id="@+id/button5"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="2"
-                                            android:id="@+id/button2"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="0"
-                                            android:id="@+id/button0"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                           />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1">
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="×"
-                                            android:id="@+id/buttonX"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="9"
-                                            android:id="@+id/button9"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="6"
-                                            android:id="@+id/button6"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="3"
-                                            android:id="@+id/button3"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="."
-                                            android:id="@+id/buttonD"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1">
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="÷"
-                                            android:id="@+id/buttonS"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="-"
-                                            android:id="@+id/button_"
-                                            android:layout_weight="1"
-                                            android:textSize="60sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="+"
-                                            android:id="@+id/buttonP"
-                                            android:layout_weight="1"
-                                            android:textSize="40sp"
-                                            />
-                                        <Button
-                                            android:layout_width="match_parent"
-                                            android:layout_height="0dp"
-                                            android:text="="
-                                            android:id="@+id/buttonI"
-                                            android:layout_weight="2"
-                                            android:textSize="40sp"
-                                            />
-                                </LinearLayout>
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/pricetextview"
+                            android:gravity="right|center_vertical"
+                            android:textSize="40sp"
+                            android:layout_weight="1"
+                            android:hint="合計"
+                            />
+                        <EditText
+                            android:id="@+id/addprice"
+                            android:inputType="number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="sans-serif"
+                            android:layout_weight="1"
+                            android:hint="値段"/>
+                        <EditText
+                            android:id="@+id/kosuu"
+                            android:inputType="number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="sans-serif"
+                            android:layout_weight="1"
+                            android:text="1"
+                            android:hint="個数"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            >
+                        <Button
+                            android:id="@+id/add"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="追加" />
+                        <Button
+                            android:id="@+id/delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="削除" />
+                                <Button
+                                    android:id="@+id/reset"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="リセット" />
                         </LinearLayout>
+
                 </LinearLayout>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"

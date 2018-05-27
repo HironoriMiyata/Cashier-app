@@ -13,16 +13,22 @@ class MainActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         StartDatabase()
-        val button: Button = findViewById(R.id.button) as Button
-        button.setOnClickListener(object:View.OnClickListener {
+        val buttonDatabase: Button = findViewById(R.id.database) as Button
+        buttonDatabase.setOnClickListener(object:View.OnClickListener {
             override fun onClick(v: View?) {
                 DatabaseScreen()
             }
         })
-        val button2: Button = findViewById(R.id.button2) as Button
-        button2.setOnClickListener(object:View.OnClickListener {
+        val buttonCashier: Button = findViewById(R.id.cashier) as Button
+        buttonCashier.setOnClickListener(object:View.OnClickListener {
             override fun onClick(v: View?) {
                 cashierScreen()
+            }
+        })
+        val buttonresult: Button = findViewById(R.id.result) as Button
+        buttonresult.setOnClickListener(object:View.OnClickListener {
+            override fun onClick(v: View?) {
+                resultScreen()
             }
         })
     }
@@ -32,6 +38,10 @@ class MainActivity : AppCompatActivity() {
     }
     fun cashierScreen(){
         val intent = Intent(this,CashierActivity::class.java)
+        startActivity(intent)
+    }
+    fun resultScreen(){
+        val intent = Intent(this,ResultActivity::class.java)
         startActivity(intent)
     }
 }

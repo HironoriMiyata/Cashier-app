@@ -11,8 +11,6 @@ class StartDatabase: Application() {
 
         //Realmの初期化
         Realm.init(this)
-        val config = RealmConfiguration.Builder().build()
-        Realm.setDefaultConfiguration(config)
     }
 
 }

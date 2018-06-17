@@ -4,8 +4,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Button
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val buttonDatabase: Button = findViewById(R.id.database) as Button
         buttonDatabase.setOnClickListener(object:View.OnClickListener {
             override fun onClick(v: View?) {
-                DatabaseScreen()
+                databaseScreen()
             }
         })
         val buttonCashier: Button = findViewById(R.id.cashier) as Button
@@ -26,24 +26,24 @@ class MainActivity : AppCompatActivity() {
                 cashierScreen()
             }
         })
-        val buttonresult: Button = findViewById(R.id.result) as Button
-        buttonresult.setOnClickListener(object:View.OnClickListener {
+        val buttonResult: Button = findViewById(R.id.result) as Button
+        buttonResult.setOnClickListener(object:View.OnClickListener {
             override fun onClick(v: View?) {
                 resultScreen()
             }
         })
     }
-    fun DatabaseScreen(){
-        val intent = Intent(this,DatabaseActivity()::class.java)
-        startActivity(intent)
+    fun databaseScreen(){
+        val databaseIntent = Intent(this,DatabaseActivity()::class.java)
+        startActivity(databaseIntent)
     }
     fun cashierScreen(){
-        val intent = Intent(this,CashierActivity::class.java)
-        startActivity(intent)
+        val cashierIntent = Intent(this,CashierActivity()::class.java)
+        startActivity(cashierIntent)
     }
     fun resultScreen(){
-        val intent = Intent(this,ResultActivity::class.java)
-        startActivity(intent)
+        val resultIntent = Intent(this,ResultActivity()::class.java)
+        startActivity(resultIntent)
     }
 
 }

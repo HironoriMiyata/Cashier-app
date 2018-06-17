@@ -25,10 +25,28 @@ class CashierActivity : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,moneyList)
         val listView : ListView = findViewById(R.id.money)
         listView.adapter = arrayAdapter
+        val productList:MutableList<String> = mutableListOf("魚","肉")
+        val productArrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,productList)
+        val productListView:ListView = findViewById(R.id.productlist)
+        productListView.adapter = productArrayAdapter
         var sum = 0
         var all = sum
         var add =0
         var kosuu = 1
+        productListView.setOnItemClickListener { parent, view, position, id ->
+
+            // 項目の TextView を取得
+            val productItemTextView: TextView = view.findViewById(android.R.id.text1)
+            when(productItemTextView.getText().toString()){
+                in "魚" ->{
+                    addEditText.setText("300")
+                }
+                in "肉" ->{
+                    addEditText.setText("500")
+                }
+            }
+
+        }
         val buttonAdd: Button = findViewById(R.id.add) as Button
         buttonAdd.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?) {

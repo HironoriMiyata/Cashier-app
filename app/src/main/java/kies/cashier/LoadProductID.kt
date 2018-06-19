@@ -13,8 +13,12 @@ class  LoadProductID(){
         val  productID = realm.where(Product::class.java)
                 .findAll()
                 .map { it.productId }
-        
+        productID.sorted()
+        while (productID[id] ==id ){
+            id++
+        }
         realm.close()
         return id
     }
 }
+

@@ -9,7 +9,7 @@ open class Product() : RealmObject() {
     @PrimaryKey
      var productId: Int = 0
     @Required
-     var productnName: String = ""
+     var productName: String = ""
      var productValue: Int = 0
     var productCunt :Int = 0
 }

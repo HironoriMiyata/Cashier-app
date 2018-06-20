@@ -1,12 +1,16 @@
 package kies.cashier
 
+import kies.cashier.Model.DB.LoadProductName
 
 
-lateinit var  oldProductList : MutableList<String>
+lateinit var  oldProductList : List<String>
 
-fun startDatabaseProduct():MutableList<String>{
-    oldProductList = mutableListOf()
-    oldProductList.add("+")
+fun startDatabaseProduct():List<String>{
+    val loadProdcutName = LoadProductName()
+    var productNameList = mutableListOf<String>()
+    oldProductList = loadProdcutName.loadProductNmae()
+    oldProductList = productNameList
+    productNameList.add("+")
 
     return oldProductList
 }

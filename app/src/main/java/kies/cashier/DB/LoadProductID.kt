@@ -1,7 +1,6 @@
-package kies.cashier
+package kies.cashier.DB
 
 import io.realm.Realm
-import io.realm.RealmResults
 
 
 lateinit var realm: Realm

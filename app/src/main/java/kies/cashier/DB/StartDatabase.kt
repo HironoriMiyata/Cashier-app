@@ -1,4 +1,4 @@
-package kies.cashier
+package kies.cashier.DB
 
 import android.app.Application
 import io.realm.Realm

@@ -1,8 +1,9 @@
-package kies.cashier
+package kies.cashier.Activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import kies.cashier.R
 
 class ResultActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {

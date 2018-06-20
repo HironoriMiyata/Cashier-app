@@ -1,4 +1,4 @@
-package kies.cashier
+package kies.cashier.Activity
 
 
 import android.content.DialogInterface
@@ -7,6 +7,8 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
+import kies.cashier.R
+import kies.cashier.startDatabaseProduct
 
 class DatabaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

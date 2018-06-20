@@ -1,9 +1,10 @@
-package kies.cashier
+package kies.cashier.Activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
+import kies.cashier.R
 
 
 class CashierActivity : AppCompatActivity() {

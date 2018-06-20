@@ -10,8 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".StartDatabase">
-        <activity android:name=".MainActivity">
+        android:name=".DB.StartDatabase">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,14 +19,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CashierActivity"
+            android:name=".Activity.CashierActivity"
             android:screenOrientation="landscape">
 
         </activity>
-        <activity android:name=".DatabaseActivity">
+        <activity android:name=".Activity.DatabaseActivity">
 
         </activity>
-        <activity android:name=".ResultActivity">
+        <activity android:name=".Activity.ResultActivity">
 
         </activity>
     </application>

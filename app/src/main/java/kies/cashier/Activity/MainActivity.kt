@@ -1,11 +1,12 @@
-package kies.cashier
+package kies.cashier.Activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-
+import kies.cashier.DB.StartDatabase
+import kies.cashier.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,15 +35,15 @@ class MainActivity : AppCompatActivity() {
         })
     }
     fun databaseScreen(){
-        val databaseIntent = Intent(this,DatabaseActivity()::class.java)
+        val databaseIntent = Intent(this, DatabaseActivity()::class.java)
         startActivity(databaseIntent)
     }
     fun cashierScreen(){
-        val cashierIntent = Intent(this,CashierActivity()::class.java)
+        val cashierIntent = Intent(this, CashierActivity()::class.java)
         startActivity(cashierIntent)
     }
     fun resultScreen(){
-        val resultIntent = Intent(this,ResultActivity()::class.java)
+        val resultIntent = Intent(this, ResultActivity()::class.java)
         startActivity(resultIntent)
     }
 

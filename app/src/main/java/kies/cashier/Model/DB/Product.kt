@@ -1,4 +1,4 @@
-package kies.cashier.DB
+package kies.cashier.Model.DB
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey

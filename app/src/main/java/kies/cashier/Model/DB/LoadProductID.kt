@@ -3,9 +3,10 @@ package kies.cashier.Model.DB
 import io.realm.Realm
 
 
-lateinit var realm: Realm
+
 
 class  LoadProductID(){
+    lateinit var realm: Realm
     fun  loadProductID():List<Int>{
         realm = Realm.getDefaultInstance()
 

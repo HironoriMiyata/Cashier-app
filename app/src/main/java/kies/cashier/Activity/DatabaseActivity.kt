@@ -7,8 +7,9 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
+import kies.cashier.Model.DataProcessing.ProductNameList
 import kies.cashier.R
-import kies.cashier.startDatabaseProduct
+
 
 class DatabaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +24,8 @@ class DatabaseActivity : AppCompatActivity() {
 
         val dialogEditText2 : EditText = inflater.findViewById(R.id.price)
         dialogEditText2.requestFocus()
-
-        val prodcutList:MutableList<String> = startDatabaseProduct()
+        val productNameList = ProductNameList()
+        val prodcutList:MutableList<String> = productNameList.startDatabaseProduct()
 
         val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,prodcutList)
 

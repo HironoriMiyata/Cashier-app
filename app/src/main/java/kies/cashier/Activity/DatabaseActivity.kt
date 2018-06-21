@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
+import kies.cashier.Model.DataProcessing.ProductInput
 import kies.cashier.Model.DataProcessing.ProductNameList
 import kies.cashier.R
 
@@ -17,7 +18,7 @@ class DatabaseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_databass)
 
         val inflater = this.layoutInflater.inflate(R.layout.dialog_signin, null, false)
-
+        val productInput = ProductInput()
         // ダイアログ内のテキストエリア
         val dialogEditText : EditText = inflater.findViewById(R.id.product)
         dialogEditText.requestFocus()
@@ -41,6 +42,8 @@ class DatabaseActivity : AppCompatActivity() {
                 Toast.makeText(context, "追加しました", Toast.LENGTH_LONG).show()
                 arrayAdapter.insert( "New  "  + dialogEditText.text, arrayAdapter.count - 1)//追加
                 arrayAdapter.notifyDataSetChanged()
+                productInput.productInput(dialogEditText.toString(),dialogEditText2.toString())
+
             })
             setNegativeButton("Cancel", null)
         }.create()

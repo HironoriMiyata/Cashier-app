@@ -12,6 +12,7 @@ class  SaveProduct(){
          realm.beginTransaction()
          //ここに追加や更新の入れる
          val product = realm.createObject(Product::class.java,id)
+
          product.productName = productName
          product.productValue = productValue
          product.productCunt = 0

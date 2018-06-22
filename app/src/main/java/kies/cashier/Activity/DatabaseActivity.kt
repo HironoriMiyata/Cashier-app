@@ -22,9 +22,7 @@ class DatabaseActivity : AppCompatActivity() {
         // ダイアログ内のテキストエリア
         val dialogEditText : EditText = inflater.findViewById(R.id.product)
         dialogEditText.requestFocus()
-
         val dialogEditText2 : EditText = inflater.findViewById(R.id.price)
-        dialogEditText2.requestFocus()
         val productNameList = ProductNameList()
         val prodcutList:MutableList<String> = productNameList.startDatabaseProduct()
 
@@ -41,8 +39,9 @@ class DatabaseActivity : AppCompatActivity() {
                 // OKボタンを押したときの処理
                 Toast.makeText(context, "追加しました", Toast.LENGTH_LONG).show()
                 arrayAdapter.insert( "New  "  + dialogEditText.text, arrayAdapter.count - 1)//追加
+                productInput.productInput(dialogEditText.text.toString(),dialogEditText2.text.toString())
                 arrayAdapter.notifyDataSetChanged()
-                productInput.productInput(dialogEditText.toString(),dialogEditText2.toString())
+
 
             })
             setNegativeButton("Cancel", null)
@@ -61,6 +60,7 @@ class DatabaseActivity : AppCompatActivity() {
             if (position == arrayAdapter.count - 1) {
 
                 dialog.show()
+
                 dialogEditText.setText("")
                 dialogEditText2.setText("")
             }

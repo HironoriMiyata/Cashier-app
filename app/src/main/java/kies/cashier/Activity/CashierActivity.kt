@@ -38,12 +38,13 @@ class CashierActivity : AppCompatActivity() {
         var add = 0
         var kosuu = 1
         val loadProductPrice = LoadProductPrice()
+        var productPrice = ""
         productListView.setOnItemClickListener { parent, view, position, id ->
-
             // 項目の TextView を取得
             val productItemTextView: TextView = view.findViewById(android.R.id.text1)
 
-            addEditText.setText(Integer.toString(loadProductPrice.loadProductPrice(productItemTextView.getText().toString())))
+            productPrice = productItemTextView.getText().toString()
+            addEditText.setText(Integer.toString(loadProductPrice.loadProductPrice(productPrice)))
 
         }
         val buttonAdd: Button = findViewById(R.id.add) as Button

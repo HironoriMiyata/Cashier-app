@@ -5,7 +5,7 @@ import io.realm.RealmResults
 
 class LoadProductName(){
     lateinit var realm: Realm
-    fun loadProductNmae():MutableList<String>{
+    fun loadProductName():MutableList<String>{
         realm = Realm.getDefaultInstance()
 
         var nameList = mutableListOf<String>()
@@ -14,8 +14,9 @@ class LoadProductName(){
         for (id in productName){
             nameList.add(id.productName)
         }
+
         realm.close()
         nameList.sorted()
-        return nameList
+        return  nameList
     }
 }

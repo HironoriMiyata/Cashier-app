@@ -24,7 +24,7 @@ class DatabaseActivity : AppCompatActivity() {
         dialogEditText.requestFocus()
         val dialogEditText2 : EditText = inflater.findViewById(R.id.price)
         val productNameList = ProductNameList()
-        val prodcutList:MutableList<String> = productNameList.startDatabaseProduct()
+        val prodcutList = productNameList.startDatabaseProduct()
 
         val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,prodcutList)
 

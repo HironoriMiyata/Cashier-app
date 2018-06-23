@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
+import kies.cashier.Model.DB.ProductDelete
 import kies.cashier.Model.DataProcessing.ProductInput
 import kies.cashier.Model.DataProcessing.ProductNameList
 import kies.cashier.R
@@ -19,6 +20,7 @@ class DatabaseActivity : AppCompatActivity() {
 
         val inflater = this.layoutInflater.inflate(R.layout.dialog_signin, null, false)
         val productInput = ProductInput()
+        val productDelete = ProductDelete()
         // ダイアログ内のテキストエリア
         val dialogEditText : EditText = inflater.findViewById(R.id.product)
         dialogEditText.requestFocus()
@@ -82,6 +84,7 @@ class DatabaseActivity : AppCompatActivity() {
                     // OKをタップしたときの処理
                     Toast.makeText(context, "削除しました", Toast.LENGTH_LONG).show()
                     arrayAdapter.remove(arrayAdapter.getItem(position))
+                    productDelete.productDelete(arrayAdapter.getItem(position).toString())
                     arrayAdapter.notifyDataSetChanged()
                 })
                 setNegativeButton("Cancel", null)

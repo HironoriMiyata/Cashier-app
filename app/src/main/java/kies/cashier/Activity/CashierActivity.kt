@@ -43,7 +43,7 @@ class CashierActivity : AppCompatActivity() {
             // 項目の TextView を取得
             val productItemTextView: TextView = view.findViewById(android.R.id.text1)
 
-            addEditText.setText(loadProductPrice.loadProductPrice(productItemTextView.getText().toString()))
+            addEditText.setText(Integer.toString(loadProductPrice.loadProductPrice(productItemTextView.getText().toString())))
 
         }
         val buttonAdd: Button = findViewById(R.id.add) as Button

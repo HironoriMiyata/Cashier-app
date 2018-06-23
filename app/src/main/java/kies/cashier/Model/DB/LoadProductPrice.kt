@@ -7,7 +7,7 @@ class LoadProductPrice(){
     fun loadProductPrice(name:String):Int{
         realm = Realm.getDefaultInstance()
         var productPrice = realm.where(Product::class.java)
-                .equalTo("productPrice",name)
+                .equalTo("productName",name)
                 .findAll()
                 .map { it.productPrice }
         realm.close()

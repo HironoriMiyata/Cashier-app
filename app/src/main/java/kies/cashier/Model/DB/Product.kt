@@ -10,6 +10,6 @@ open class Product() : RealmObject() {
      var productId: Int = 0
     @Required
      var productName: String = ""
-     var productValue: Int = 0
+     var productPrice: Int = 0
     var productCunt :Int = 0
 }

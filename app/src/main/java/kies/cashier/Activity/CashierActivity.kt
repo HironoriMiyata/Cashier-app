@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
+import kies.cashier.Model.DB.LoadProductName
+import kies.cashier.Model.DB.LoadProductPrice
+import kies.cashier.Model.DataProcessing.ProductNameList
 import kies.cashier.R
 
 
@@ -16,7 +19,7 @@ class CashierActivity : AppCompatActivity() {
 
         val addEditText : EditText = findViewById(R.id.addprice)
         addEditText.requestFocus()
-
+        val productName = LoadProductName()
         val productTextView:TextView = findViewById(R.id.pricetextview)
         val allProductTextView:TextView = findViewById(R.id.allpricetextview)
         var addMonmy = 0
@@ -26,7 +29,7 @@ class CashierActivity : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,moneyList)
         val listView : ListView = findViewById(R.id.money)
         listView.adapter = arrayAdapter
-        val productList:MutableList<String> = mutableListOf("魚","肉")
+        val productList:MutableList<String> = productName.loadProductName()
         val productArrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,productList)
         val productListView:ListView = findViewById(R.id.productlist)
         productListView.adapter = productArrayAdapter
@@ -34,25 +37,24 @@ class CashierActivity : AppCompatActivity() {
         var all = sum
         var add =0
         var kosuu = 1
+        val loadProductPrice = LoadProductPrice()
         productListView.setOnItemClickListener { parent, view, position, id ->
 
             // 項目の TextView を取得
             val productItemTextView: TextView = view.findViewById(android.R.id.text1)
-            when(productItemTextView.getText().toString()){
-                in "魚" ->{
-                    addEditText.setText("300")
-                }
-                in "肉" ->{
-                    addEditText.setText("500")
-                }
-            }
+
+            addEditText.setText(loadProductPrice.loadProductPrice(productItemTextView.getText().toString()))
 
         }
         val buttonAdd: Button = findViewById(R.id.add) as Button
         buttonAdd.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?) {
-                add = Integer.parseInt(addEditText.getText().toString())
-                kosuu = Integer.parseInt(kosuuEditText.getText().toString())
+                try{
+                    add = Integer.parseInt(addEditText.getText().toString())
+                    kosuu = Integer.parseInt(kosuuEditText.getText().toString())
+                } catch (e: NumberFormatException){
+
+                }
                 sum = sum + add * kosuu
                 productTextView.setText("合計"+ Integer.toString(sum))
                 all = sum

@@ -7,9 +7,9 @@ import io.realm.annotations.Required
 open class Product() : RealmObject() {
 
     @PrimaryKey
-     var productId: Int = 0
+    var productId: Int = 0
     @Required
-     var productName: String = ""
-     var productPrice: Int = 0
-    var productCunt :Int = 0
+    var productName: String = ""
+    var productPrice: Int = 0
+    var productCunt: Int = 0
 }

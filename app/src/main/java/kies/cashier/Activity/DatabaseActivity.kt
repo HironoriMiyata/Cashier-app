@@ -22,15 +22,15 @@ class DatabaseActivity : AppCompatActivity() {
         val productInput = ProductInput()
         val productDelete = ProductDelete()
         // ダイアログ内のテキストエリア
-        val dialogEditText : EditText = inflater.findViewById(R.id.product)
+        val dialogEditText: EditText = inflater.findViewById(R.id.product)
         dialogEditText.requestFocus()
-        val dialogEditText2 : EditText = inflater.findViewById(R.id.price)
+        val dialogEditText2: EditText = inflater.findViewById(R.id.price)
         val productNameList = ProductNameList()
         val prodcutList = productNameList.startDatabaseProduct()
 
-        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,prodcutList)
+        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, prodcutList)
 
-        val listView : ListView = findViewById(R.id.listView)
+        val listView: ListView = findViewById(R.id.listView)
         listView.adapter = arrayAdapter
 
         val dialog = AlertDialog.Builder(this).apply {
@@ -40,8 +40,8 @@ class DatabaseActivity : AppCompatActivity() {
             setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
                 // OKボタンを押したときの処理
                 Toast.makeText(context, "追加しました", Toast.LENGTH_LONG).show()
-                arrayAdapter.insert( "New  "  + dialogEditText.text, arrayAdapter.count - 1)//追加
-                productInput.productInput(dialogEditText.text.toString(),dialogEditText2.text.toString())
+                arrayAdapter.insert("New  " + dialogEditText.text, arrayAdapter.count - 1)//追加
+                productInput.productInput(dialogEditText.text.toString(), dialogEditText2.text.toString())
                 arrayAdapter.notifyDataSetChanged()
 
 
@@ -50,10 +50,10 @@ class DatabaseActivity : AppCompatActivity() {
         }.create()
 
         // 項目をタップしたときの処理
-        listView.setOnItemClickListener {parent, view, position, id ->
+        listView.setOnItemClickListener { parent, view, position, id ->
 
             // 項目の TextView を取得
-            val itemTextView : TextView = view.findViewById(android.R.id.text1)
+            val itemTextView: TextView = view.findViewById(android.R.id.text1)
 
             // 項目のラベルテキストをログに表示
             Log.i("debug", itemTextView.text.toString())

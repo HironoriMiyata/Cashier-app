@@ -12,37 +12,40 @@ import kies.cashier.R
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         StartDatabase()
         val buttonDatabase: Button = findViewById(R.id.database) as Button
-        buttonDatabase.setOnClickListener(object:View.OnClickListener {
+        buttonDatabase.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 databaseScreen()
             }
         })
         val buttonCashier: Button = findViewById(R.id.cashier) as Button
-        buttonCashier.setOnClickListener(object:View.OnClickListener {
+        buttonCashier.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 cashierScreen()
             }
         })
         val buttonResult: Button = findViewById(R.id.result) as Button
-        buttonResult.setOnClickListener(object:View.OnClickListener {
+        buttonResult.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 resultScreen()
             }
         })
     }
-    fun databaseScreen(){
+
+    fun databaseScreen() {
         val databaseIntent = Intent(this, DatabaseActivity()::class.java)
         startActivity(databaseIntent)
     }
-    fun cashierScreen(){
+
+    fun cashierScreen() {
         val cashierIntent = Intent(this, CashierActivity()::class.java)
         startActivity(cashierIntent)
     }
-    fun resultScreen(){
+
+    fun resultScreen() {
         val resultIntent = Intent(this, ResultActivity()::class.java)
         startActivity(resultIntent)
     }

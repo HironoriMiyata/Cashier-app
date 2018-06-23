@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import kies.cashier.R
 
-class ResultActivity : AppCompatActivity()  {
+class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activitiy_result)

@@ -15,7 +15,7 @@ class SaveProduct() {
 
         product.productName = productName
         product.productPrice = productPrice
-        product.productCunt = 0
+        product.productCount = 0
         realm.commitTransaction()
         realm.close()
     }

@@ -6,8 +6,10 @@ import android.view.View
 import android.widget.*
 import kies.cashier.Model.DB.LoadProductName
 import kies.cashier.Model.DB.LoadProductPrice
+import kies.cashier.Model.DB.RenewalProductCount
 import kies.cashier.Model.DataProcessing.ProductNameList
 import kies.cashier.R
+import kotlinx.android.synthetic.main.dialog_signin.*
 
 
 class CashierActivity : AppCompatActivity() {
@@ -38,7 +40,8 @@ class CashierActivity : AppCompatActivity() {
         var add = 0
         var kosuu = 1
         val loadProductPrice = LoadProductPrice()
-        var productPrice = ""
+        var productPrice = "Noitem"
+        val renewalProductCount = RenewalProductCount()
         productListView.setOnItemClickListener { parent, view, position, id ->
             // 項目の TextView を取得
             val productItemTextView: TextView = view.findViewById(android.R.id.text1)
@@ -57,12 +60,15 @@ class CashierActivity : AppCompatActivity() {
 
                 }
                 sum = sum + add * kosuu
+                if (productPrice != "Noitem") {
+                    renewalProductCount.renewalProductCount(productPrice, kosuu)
+                }
                 productTextView.setText("合計" + Integer.toString(sum))
                 all = sum
                 allProductTextView.setText("売り上げ合計" + Integer.toString(all))
                 kosuuEditText.setText("1")
                 addEditText.setText("0")
-
+                productPrice = "Noitem"
             }
         })
         val buttonDelete: Button = findViewById(R.id.delete) as Button

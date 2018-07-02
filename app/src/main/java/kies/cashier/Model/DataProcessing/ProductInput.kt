@@ -1,6 +1,6 @@
 package kies.cashier.Model.DataProcessing
 
-import kies.cashier.Model.DB.SaveProduct
+import kies.cashier.Model.DB.ProductDB.SaveProduct
 
 class ProductInput() {
     fun productInput(name: String, priceString: String) {

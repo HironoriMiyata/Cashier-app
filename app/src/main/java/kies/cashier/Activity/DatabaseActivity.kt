@@ -7,7 +7,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
-import kies.cashier.Model.DB.ProductDelete
+import kies.cashier.Model.DB.ProductDB.ProductDelete
 import kies.cashier.Model.DataProcessing.ProductInput
 import kies.cashier.Model.DataProcessing.ProductNameList
 import kies.cashier.R
@@ -43,8 +43,6 @@ class DatabaseActivity : AppCompatActivity() {
                 arrayAdapter.insert("New  " + dialogEditText.text, arrayAdapter.count - 1)//追加
                 productInput.productInput(dialogEditText.text.toString(), dialogEditText2.text.toString())
                 arrayAdapter.notifyDataSetChanged()
-
-
             })
             setNegativeButton("Cancel", null)
         }.create()
@@ -83,8 +81,8 @@ class DatabaseActivity : AppCompatActivity() {
                 setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
                     // OKをタップしたときの処理
                     Toast.makeText(context, "削除しました", Toast.LENGTH_LONG).show()
-                    arrayAdapter.remove(arrayAdapter.getItem(position))
                     productDelete.productDelete(arrayAdapter.getItem(position).toString())
+                    arrayAdapter.remove(arrayAdapter.getItem(position))
                     arrayAdapter.notifyDataSetChanged()
                 })
                 setNegativeButton("Cancel", null)

@@ -1,6 +1,6 @@
 package kies.cashier.Model.DataProcessing
 
-import kies.cashier.Model.DB.LoadProductName
+import kies.cashier.Model.DB.ProductDB.LoadProductName
 
 class ProductNameList() {
 

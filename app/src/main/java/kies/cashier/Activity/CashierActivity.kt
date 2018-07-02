@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
-import kies.cashier.Model.DB.LoadProductName
-import kies.cashier.Model.DB.LoadProductPrice
-import kies.cashier.Model.DB.RenewalProductCount
-import kies.cashier.Model.DataProcessing.ProductNameList
+import kies.cashier.Model.DB.ProductDB.LoadProductName
+import kies.cashier.Model.DB.ProductDB.LoadProductPrice
+import kies.cashier.Model.DB.ProductDB.RenewalProductCount
 import kies.cashier.R
-import kotlinx.android.synthetic.main.dialog_signin.*
 
 
 class CashierActivity : AppCompatActivity() {

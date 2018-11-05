@@ -1,8 +1,6 @@
-package kies.cashier.Model.DB
+package kies.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
-
-
 
 
 class  LoadProductID(){

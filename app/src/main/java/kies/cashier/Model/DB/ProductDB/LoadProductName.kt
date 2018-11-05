@@ -1,7 +1,6 @@
-package kies.cashier.Model.DB
+package kies.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
-import io.realm.RealmResults
 
 class LoadProductName() {
     lateinit var realm: Realm

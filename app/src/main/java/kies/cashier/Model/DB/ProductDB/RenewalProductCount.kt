@@ -1,4 +1,4 @@
-package kies.cashier.Model.DB
+package kies.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
 
@@ -18,6 +18,7 @@ class RenewalProductCount() {
             if (productCount != null) {
                 productCount.productCount = count
             }
+        realm.close()
         }
     }
 }

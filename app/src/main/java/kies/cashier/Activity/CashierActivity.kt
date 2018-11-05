@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
-import kies.cashier.Model.DB.LoadProductName
-import kies.cashier.Model.DB.LoadProductPrice
-import kies.cashier.Model.DB.RenewalProductCount
-import kies.cashier.Model.DataProcessing.ProductNameList
+import kies.cashier.Model.DB.ProductDB.LoadProductName
+import kies.cashier.Model.DB.ProductDB.LoadProductPrice
+import kies.cashier.Model.DB.ProductDB.RenewalProductCount
 import kies.cashier.R
-import kotlinx.android.synthetic.main.dialog_signin.*
 
 
 class CashierActivity : AppCompatActivity() {
@@ -60,9 +58,9 @@ class CashierActivity : AppCompatActivity() {
 
                 }
                 sum = sum + add * kosuu
-                if (productPrice != "Noitem") {
+                /*if (productPrice != "Noitem") {
                     renewalProductCount.renewalProductCount(productPrice, kosuu)
-                }
+                }*/
                 productTextView.setText("合計" + Integer.toString(sum))
                 all = sum
                 allProductTextView.setText("売り上げ合計" + Integer.toString(all))

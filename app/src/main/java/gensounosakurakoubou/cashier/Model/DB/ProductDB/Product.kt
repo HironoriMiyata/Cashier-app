@@ -1,4 +1,4 @@
-package kies.cashier.Model.DB.ProductDB
+package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey

@@ -1,4 +1,4 @@
-package kies.cashier.Activity
+package gensounosakurakoubou.cashier.Activity
 
 
 import android.content.DialogInterface
@@ -7,10 +7,10 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
-import kies.cashier.Model.DB.ProductDB.ProductDelete
-import kies.cashier.Model.DataProcessing.ProductInput
-import kies.cashier.Model.DataProcessing.ProductNameList
-import kies.cashier.R
+import gensounosakurakoubou.cashier.Model.DB.ProductDB.ProductDelete
+import gensounosakurakoubou.cashier.Model.DataProcessing.ProductInput
+import gensounosakurakoubou.cashier.Model.DataProcessing.ProductNameList
+import gensounosakurakoubou.cashier.R
 
 
 class DatabaseActivity : AppCompatActivity() {

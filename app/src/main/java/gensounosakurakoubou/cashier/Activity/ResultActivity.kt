@@ -1,9 +1,9 @@
-package kies.cashier.Activity
+package gensounosakurakoubou.cashier.Activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
-import kies.cashier.R
+import gensounosakurakoubou.cashier.R
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

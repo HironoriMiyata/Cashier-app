@@ -1,4 +1,4 @@
-package kies.cashier.Model.DB
+package gensounosakurakoubou.cashier.Model.DB
 
 import android.app.Application
 import io.realm.Realm

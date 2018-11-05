@@ -1,6 +1,6 @@
-package kies.cashier.Model.DataProcessing
+package gensounosakurakoubou.cashier.Model.DataProcessing
 
-import kies.cashier.Model.DB.ProductDB.LoadProductName
+import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductName
 
 class ProductNameList() {
 

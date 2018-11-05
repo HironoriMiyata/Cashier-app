@@ -1,13 +1,13 @@
-package kies.cashier.Activity
+package gensounosakurakoubou.cashier.Activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
-import kies.cashier.Model.DB.ProductDB.LoadProductName
-import kies.cashier.Model.DB.ProductDB.LoadProductPrice
-import kies.cashier.Model.DB.ProductDB.RenewalProductCount
-import kies.cashier.R
+import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductName
+import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductPrice
+import gensounosakurakoubou.cashier.Model.DB.ProductDB.RenewalProductCount
+import gensounosakurakoubou.cashier.R
 
 
 class CashierActivity : AppCompatActivity() {

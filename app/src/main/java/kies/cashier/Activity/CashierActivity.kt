@@ -58,9 +58,9 @@ class CashierActivity : AppCompatActivity() {
 
                 }
                 sum = sum + add * kosuu
-                if (productPrice != "Noitem") {
+                /*if (productPrice != "Noitem") {
                     renewalProductCount.renewalProductCount(productPrice, kosuu)
-                }
+                }*/
                 productTextView.setText("合計" + Integer.toString(sum))
                 all = sum
                 allProductTextView.setText("売り上げ合計" + Integer.toString(all))

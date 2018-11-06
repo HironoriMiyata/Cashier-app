@@ -2,7 +2,7 @@ package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
 
-class LoadProductName() {
+class LoadProductName {
     lateinit var realm: Realm
     fun loadProductName(): MutableList<String> {
         realm = Realm.getDefaultInstance()

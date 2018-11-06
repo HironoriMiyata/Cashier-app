@@ -2,7 +2,7 @@ package gensounosakurakoubou.cashier.Model.DataProcessing
 
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductName
 
-class ProductNameList() {
+class ProductNameList {
 
 
     fun startDatabaseProduct(): MutableList<String> {

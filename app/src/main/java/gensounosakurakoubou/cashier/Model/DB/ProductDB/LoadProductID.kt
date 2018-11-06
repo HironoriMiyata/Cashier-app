@@ -3,7 +3,7 @@ package gensounosakurakoubou.cashier.Model.DB.ProductDB
 import io.realm.Realm
 
 
-class  LoadProductID(){
+class  LoadProductID{
     lateinit var realm: Realm
     fun  loadProductID():List<Int>{
         realm = Realm.getDefaultInstance()

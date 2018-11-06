@@ -2,7 +2,7 @@ package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
 
-class RenewalProductCount() {
+class RenewalProductCount {
     lateinit var realm: Realm
     fun renewalProductCount(name: String,addCount:Int) {
         realm = Realm.getDefaultInstance()

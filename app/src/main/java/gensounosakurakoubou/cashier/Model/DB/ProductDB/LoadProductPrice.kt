@@ -2,7 +2,7 @@ package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
 
-class LoadProductPrice() {
+class LoadProductPrice {
     lateinit var realm: Realm
     fun loadProductPrice(name: String): Int {
         realm = Realm.getDefaultInstance()

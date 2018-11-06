@@ -3,7 +3,7 @@ package gensounosakurakoubou.cashier.Model.DB.ProductDB
 import io.realm.Realm
 
 
-class ProductDelete(){
+class ProductDelete{
     lateinit var realm: Realm
     fun productDelete(name:String){
         realm = Realm.getDefaultInstance()

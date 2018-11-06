@@ -3,7 +3,7 @@ package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
 
-class SaveProduct() {
+class SaveProduct {
     lateinit var realm: Realm
     fun saveProduct(productName: String, productPrice: Int) {
         val loadId = LoadProductID()

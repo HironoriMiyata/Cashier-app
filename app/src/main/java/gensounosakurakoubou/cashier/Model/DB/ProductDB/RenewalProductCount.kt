@@ -2,23 +2,24 @@ package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 import io.realm.Realm
 
-class RenewalProductCount() {
+class RenewalProductCount {
     lateinit var realm: Realm
-    fun renewalProductCount(name: String,addCount:Int) {
+    fun renewalProductCount(name: String, addCount: Int) {
         realm = Realm.getDefaultInstance()
-        val productCount = realm.where(Product::class.java)
-                .equalTo("productName", name)
-                .findFirst()
-        val oldCount = realm.where(Product::class.java)
-                .equalTo("productName", name)
-                .findAll()
-                .map { it.productCount }
-        var count = oldCount[0] + addCount
         realm.executeTransaction {
-            if (productCount != null) {
-                productCount.productCount = count
+            val newProductCount = realm.where(Product::class.java)
+                    .equalTo("productName", name)
+                    .findFirst()
+
+            val oldCount = realm.where(Product::class.java)
+                    .equalTo("productName", name)
+                    .findFirst()
+
+            var count = oldCount!!.productCount + addCount
+
+            if (newProductCount != null) {
+                newProductCount.productCount = count
             }
-        realm.close()
         }
     }
 }

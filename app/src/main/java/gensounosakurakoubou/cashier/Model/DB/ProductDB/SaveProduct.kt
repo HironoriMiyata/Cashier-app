@@ -5,7 +5,7 @@ import io.realm.Realm
 
 class SaveProduct {
     lateinit var realm: Realm
-    fun saveProduct(productName: String, productPrice: Int) {
+    fun saveProduct(productName: String, productPrice: Int,cost:Int) {
         val loadId = LoadProductID()
         realm = Realm.getDefaultInstance()
         var id = loadId.findLoadProductID()
@@ -16,6 +16,7 @@ class SaveProduct {
         product.productName = productName
         product.productPrice = productPrice
         product.productCount = 0
+        product.productCost= cost
         realm.commitTransaction()
         realm.close()
     }

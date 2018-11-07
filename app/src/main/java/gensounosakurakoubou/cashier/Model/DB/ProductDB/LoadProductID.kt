@@ -22,7 +22,6 @@ class  LoadProductID{
         var id = 0
         var productID  = loadProductID()
 
-
         try {
             while (id == productID[id]){
                 id++

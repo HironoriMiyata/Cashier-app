@@ -12,4 +12,5 @@ open class Product : RealmObject() {
     var productName: String = ""
     var productPrice: Int = 0
     var productCount: Int = 0
+    var productCost:Int = 0
 }

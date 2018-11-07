@@ -10,9 +10,9 @@ import java.util.*
 open class Accounting: RealmObject(){
     @PrimaryKey
     var accountingId: Int = 0
-    @Required
+   /* @Required
     var accountingDay: Calendar? = null
     var cost: Int = 0
     var sales: Int = 0
-
+*/
 }

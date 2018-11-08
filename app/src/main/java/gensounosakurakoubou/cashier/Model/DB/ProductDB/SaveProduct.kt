@@ -1,6 +1,7 @@
 package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 
+import gensounosakurakoubou.cashier.Model.DB.Product
 import io.realm.Realm
 
 class SaveProduct {

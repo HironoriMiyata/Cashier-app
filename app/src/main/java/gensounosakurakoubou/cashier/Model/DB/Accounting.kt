@@ -1,4 +1,4 @@
-package gensounosakurakoubou.cashier.Model.DB.AccountingDB
+package gensounosakurakoubou.cashier.Model.DB
 
 
 import io.realm.RealmObject

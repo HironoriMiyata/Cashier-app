@@ -1,6 +1,6 @@
 package gensounosakurakoubou.cashier.Model.DB.AccountingDB
 
-import gensounosakurakoubou.cashier.Model.DB.ProductDB.Product
+import gensounosakurakoubou.cashier.Model.DB.Product
 import io.realm.Realm
 
 class Cost {

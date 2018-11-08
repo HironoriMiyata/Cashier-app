@@ -8,7 +8,6 @@ class  LoadProductID{
     lateinit var realm: Realm
     fun  loadProductID():List<Int>{
         realm = Realm.getDefaultInstance()
-
         val  productID = realm.where(Product::class.java).findAll()
         var idList = mutableListOf<Int>()
         for (id in productID){
@@ -30,8 +29,6 @@ class  LoadProductID{
         } catch (e:IndexOutOfBoundsException ){
             return id
         }
-
-
         return id
     }
 }

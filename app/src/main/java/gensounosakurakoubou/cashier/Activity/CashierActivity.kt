@@ -16,7 +16,6 @@ class CashierActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cashier)
         val kosuuEditText: EditText = findViewById(R.id.kosuu)
         kosuuEditText.requestFocus()
-
         val addEditText: EditText = findViewById(R.id.addprice)
         addEditText.requestFocus()
         val productName = LoadProductName()

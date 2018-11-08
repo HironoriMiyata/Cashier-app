@@ -11,7 +11,6 @@ class SaveProduct {
         realm = Realm.getDefaultInstance()
         var id = loadId.findLoadProductID()
         realm.beginTransaction()
-        //ここに追加や更新の入れる
         val product = realm.createObject(Product::class.java, id)
 
         product.productName = productName

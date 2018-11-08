@@ -55,6 +55,7 @@ class DatabaseActivity : AppCompatActivity() {
                 dialog.show()
                 dialogEditText.setText("")
                 dialogEditText2.setText("")
+                dialogEditText3.setText("")
             }
 
         }

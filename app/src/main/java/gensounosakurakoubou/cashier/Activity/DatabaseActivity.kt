@@ -60,7 +60,6 @@ class DatabaseActivity : AppCompatActivity() {
 
         }
 
-
         // 項目を長押ししたときの処理
         listView.setOnItemLongClickListener { parent, view, position, id ->
 

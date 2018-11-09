@@ -1,6 +1,7 @@
 package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
 
+import gensounosakurakoubou.cashier.Model.DB.Product
 import io.realm.Realm
 
 class SaveProduct {
@@ -10,9 +11,8 @@ class SaveProduct {
         realm = Realm.getDefaultInstance()
         var id = loadId.findLoadProductID()
         realm.beginTransaction()
-        //ここに追加や更新の入れる
         val product = realm.createObject(Product::class.java, id)
-
+        //カウントは計算で使うので最初は０にすること
         product.productName = productName
         product.productPrice = productPrice
         product.productCount = 0

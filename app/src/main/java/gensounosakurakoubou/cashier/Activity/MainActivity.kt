@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import gensounosakurakoubou.cashier.Model.DB.StartDatabase
+import gensounosakurakoubou.cashier.Model.DataProcessing.StartAccounigDB
 import gensounosakurakoubou.cashier.R
 
 
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         StartDatabase()
+        StartAccounigDB()
         val buttonDatabase: Button = findViewById(R.id.database)
         buttonDatabase.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
@@ -35,17 +37,17 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun databaseScreen() {
+    private fun databaseScreen() {
         val databaseIntent = Intent(this, DatabaseActivity()::class.java)
         startActivity(databaseIntent)
     }
 
-    fun cashierScreen() {
+    private fun cashierScreen() {
         val cashierIntent = Intent(this, CashierActivity()::class.java)
         startActivity(cashierIntent)
     }
 
-    fun resultScreen() {
+    private fun resultScreen() {
         val resultIntent = Intent(this, ResultActivity()::class.java)
         startActivity(resultIntent)
     }

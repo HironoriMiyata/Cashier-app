@@ -1,5 +1,6 @@
 package gensounosakurakoubou.cashier.Model.DB.ProductDB
 
+import gensounosakurakoubou.cashier.Model.DB.Product
 import io.realm.Realm
 
 class LoadProductPrice {
@@ -11,7 +12,7 @@ class LoadProductPrice {
                 .findAll()
                 .map { it.productPrice }
         realm.close()
-        var price = productPrice[0]
+        val price = productPrice[0]
         return price
     }
 }

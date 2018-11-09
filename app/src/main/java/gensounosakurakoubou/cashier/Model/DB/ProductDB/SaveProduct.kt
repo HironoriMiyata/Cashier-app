@@ -12,7 +12,7 @@ class SaveProduct {
         var id = loadId.findLoadProductID()
         realm.beginTransaction()
         val product = realm.createObject(Product::class.java, id)
-        //カウントは粗利計算で使うので最初は０にすること
+        //カウントは計算で使うので最初は０にすること
         product.productName = productName
         product.productPrice = productPrice
         product.productCount = 0

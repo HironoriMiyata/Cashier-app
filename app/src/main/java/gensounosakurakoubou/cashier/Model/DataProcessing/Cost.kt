@@ -1,17 +1,20 @@
-package gensounosakurakoubou.cashier.Model.DB.AccountingDB
+package gensounosakurakoubou.cashier.Model.DataProcessing
 
 import gensounosakurakoubou.cashier.Model.DB.Product
 import io.realm.Realm
 
 class Cost {
 
-    fun addCost(productName: String): Int {
-        var cost = findCost(productName)
+    fun addCost(productName: String, v: Int): Int {
+        //下手にレコードをいじらないようにするための措置
+        if(v == 0) return 0
+        val cost = findCost(productName) * v
         return cost
     }
 
-    fun subtractionCost(productName: String): Int {
-        var cost = findCost(productName)
+    fun subtractionCost(productName: String, v: Int): Int {
+        if(v == 0) return 0
+        val cost = findCost(productName) * v
         return cost
     }
 

@@ -8,7 +8,7 @@ class StartDatabase : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        //Realmの初期化　どこかでも参照しやすくした
+        //Realmの初期化　どこでも参照しやすくした
         Realm.init(this)
     }
 

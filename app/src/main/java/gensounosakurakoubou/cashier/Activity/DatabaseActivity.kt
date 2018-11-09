@@ -61,7 +61,7 @@ class DatabaseActivity : AppCompatActivity() {
         // 項目を長押ししたときの処理
         listView.setOnItemLongClickListener { parent, view, position, id ->
 
-            // 一番下の項目以外は長押しで削除
+            // 一番下の項目以外は長押しで削除 ＋の項目が入ってるため
             if (position == arrayAdapter.count - 1) {
                 return@setOnItemLongClickListener false
             }

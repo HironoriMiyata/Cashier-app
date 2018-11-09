@@ -35,17 +35,17 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun databaseScreen() {
+    private fun databaseScreen() {
         val databaseIntent = Intent(this, DatabaseActivity()::class.java)
         startActivity(databaseIntent)
     }
 
-    fun cashierScreen() {
+    private fun cashierScreen() {
         val cashierIntent = Intent(this, CashierActivity()::class.java)
         startActivity(cashierIntent)
     }
 
-    fun resultScreen() {
+    private fun resultScreen() {
         val resultIntent = Intent(this, ResultActivity()::class.java)
         startActivity(resultIntent)
     }

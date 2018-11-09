@@ -11,7 +11,6 @@ class LoadProductName {
         for (id in productName) {
             nameList.add(id.productName)
         }
-
         realm.close()
         nameList.sorted()
         return nameList

@@ -20,7 +20,7 @@ class  LoadProductID{
 
     fun findLoadProductID():Int{
         var id = 0
-        var productID  = loadProductID()
+        val productID  = loadProductID()
 
         try {
             while (id == productID[id]){

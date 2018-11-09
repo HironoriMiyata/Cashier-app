@@ -12,7 +12,7 @@ class LoadProductPrice {
                 .findAll()
                 .map { it.productPrice }
         realm.close()
-        var price = productPrice[0]
+        val price = productPrice[0]
         return price
     }
 }

@@ -16,7 +16,7 @@ class RenewalProductCount {
                     .equalTo("productName", name)
                     .findFirst()
 
-            var count = oldCount!!.productCount + addCount
+            val count = oldCount!!.productCount + addCount
 
             if (newProductCount != null) {
                 newProductCount.productCount = count

@@ -27,19 +27,18 @@ class DatabaseActivity : AppCompatActivity() {
         val dialogEditText3: EditText = inflater.findViewById(R.id.cost)
         val productNameList = ProductNameList()
         val prodcutList = productNameList.startDatabaseProduct()
-
         val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, prodcutList)
-
         val listView: ListView = findViewById(R.id.listView)
         listView.adapter = arrayAdapter
 
+        //追加した情報にNEWを表示させることで使いやすく
         val dialog = AlertDialog.Builder(this).apply {
             setTitle("商品情報の追加")
             setMessage("商品情報を入力してください")
             setView(inflater)
             setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
                 Toast.makeText(context, "追加しました", Toast.LENGTH_LONG).show()
-                arrayAdapter.insert("New  " + dialogEditText.text, arrayAdapter.count - 1)//追加
+                arrayAdapter.insert("New  " + dialogEditText.text, arrayAdapter.count - 1)
                 productInput.productInput(dialogEditText.text.toString(), dialogEditText2.text.toString(), dialogEditText3.text.toString())
                 arrayAdapter.notifyDataSetChanged()
             })
@@ -48,7 +47,6 @@ class DatabaseActivity : AppCompatActivity() {
 
         // 項目をタップしたときの処理
         listView.setOnItemClickListener { parent, view, position, id ->
-
             val itemTextView: TextView = view.findViewById(android.R.id.text1)
             Log.i("debug", itemTextView.text.toString())
             if (position == arrayAdapter.count - 1) {

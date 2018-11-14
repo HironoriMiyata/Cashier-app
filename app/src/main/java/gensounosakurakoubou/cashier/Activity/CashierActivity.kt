@@ -7,6 +7,7 @@ import android.widget.*
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductName
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductPrice
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.RenewalProductCount
+import gensounosakurakoubou.cashier.Model.DB.StartDatabase
 import gensounosakurakoubou.cashier.R
 
 var sum = 0
@@ -36,6 +37,8 @@ class CashierActivity : AppCompatActivity() {
         val productListView: ListView = findViewById(R.id.productlist)
         productListView.adapter = productArrayAdapter
         val loadProductPrice = LoadProductPrice()
+
+        StartDatabase()
 
         productListView.setOnItemClickListener { parent, view, position, id ->
             val productItemTextView: TextView = view.findViewById(android.R.id.text1)

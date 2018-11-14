@@ -1,5 +1,6 @@
 package gensounosakurakoubou.cashier.Model.DataProcessing
 
+import gensounosakurakoubou.cashier.Model.DB.AccountingDB.LoadAccouning
 import gensounosakurakoubou.cashier.Model.DB.AccountingDB.SaveAccouning
 import java.util.*
 
@@ -10,14 +11,14 @@ class StartAccounigDB {
         val nowTime = getToday.get(Calendar.HOUR_OF_DAY)
         var setTime = 0
         //何もレコードがないときはすぐにレコードを作成する
-        if(checkDate()){
+        if (checkDate()) {
             saveAccouning.saveAccouning()
         }
         //データが本当に24時間表記か調べて24時間表記に直す
         setTime = checkTime(setTime)
         //利用者が決めた時間でレコードの更新が必要か確認する
         if (nowTime > setTime && setTime < 25) {
-            if (checkDay()) {
+            if (checkDay(Integer.toString(getToday.get(Calendar.DAY_OF_YEAR)))) {
                 saveAccouning.saveAccouning()
             }
         } else {
@@ -27,7 +28,7 @@ class StartAccounigDB {
         }
     }
 
-    private  fun checkDate():Boolean{
+    private fun checkDate(): Boolean {
         return true
     }
 
@@ -42,9 +43,13 @@ class StartAccounigDB {
         return checkedHour
     }
 
-    private fun checkDay(): Boolean {
-
-        return true
+    private fun checkDay(today: String): Boolean {
+        val accounnigDay = LoadAccouning()
+        val day = accounnigDay.getAccounigLastDay()
+        if (Integer.parseInt(day) < Integer.parseInt(today)) {
+            return true
+        }
+        return false
     }
 
     private fun checkOverTime(): Boolean {

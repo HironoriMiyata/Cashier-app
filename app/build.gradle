@@ -35,4 +35,5 @@ dependencies {
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-kapt'
     apply plugin: 'realm-android'
+    implementation 'net.nend.android:nend-sdk:5.0.3'
 }

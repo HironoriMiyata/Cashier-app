@@ -8,39 +8,58 @@
     tools:context=".Activity.MainActivity">
 
 
-
-    <Space android:layout_width="match_parent"
-        android:layout_height="25dip"/>
-
-    <Button
-        android:id="@+id/database"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="データベース" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Space
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dip" />
+
+        <Button
+            android:id="@+id/database"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="データベース" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dip" />
+
+        <Button
+            android:id="@+id/cashier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="キャッシャー" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dip" />
+
+        <Button
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="売り上げ 準備中です" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dip" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="25dip" />
-
-    <Button
-        android:id="@+id/cashier"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="キャッシャー" />
-
-    <Space android:layout_width="match_parent"
-        android:layout_height="25dip"/>
-
-    <Button
-        android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="売り上げ" />
-
-    <Space android:layout_width="match_parent"
-        android:layout_height="25dip"/>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <net.nend.android.NendAdView
+            android:id="@+id/nend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            nendsdk:NendApiKey="[管理画面より発行された apiKey]"
+            nendsdk:NendSpotId="[管理画面より発行された spotID]" />
+    </LinearLayout>
 </LinearLayout>

@@ -6,7 +6,7 @@ class ProductNameList {
 
     fun startDatabaseProduct(): MutableList<String> {
         val loadProdcutName = LoadProductName()
-        var productNameList = loadProdcutName.loadProductName()
+        val productNameList = loadProdcutName.loadProductName()
         productNameList.add("+")
         return productNameList
     }

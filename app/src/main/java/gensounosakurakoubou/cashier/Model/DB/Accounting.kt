@@ -12,6 +12,8 @@ open class Accounting: RealmObject(){
     var accountingId: Int = 0
     @Required
     var accountingDay:String = ""
+    var day:String = ""
+    var hour:String = ""
     var cost: Int = 0
     var sales: Int = 0
 

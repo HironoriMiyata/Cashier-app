@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.ProductDelete
+import gensounosakurakoubou.cashier.Model.DB.StartDatabase
 import gensounosakurakoubou.cashier.Model.DataProcessing.ProductInput
 import gensounosakurakoubou.cashier.Model.DataProcessing.ProductNameList
 import gensounosakurakoubou.cashier.R
@@ -17,7 +18,7 @@ class DatabaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_databass)
-
+        StartDatabase()
         val inflater = this.layoutInflater.inflate(R.layout.dialog_signin, null, false)
         val productInput = ProductInput()
         val productDelete = ProductDelete()

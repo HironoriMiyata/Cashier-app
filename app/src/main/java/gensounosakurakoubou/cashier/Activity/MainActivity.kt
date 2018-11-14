@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         StartDatabase()
-        StartAccounigDB()
+        val startAccounigDB = StartAccounigDB()
+        startAccounigDB.startAccouningDB()
         val buttonDatabase: Button = findViewById(R.id.database)
         buttonDatabase.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {

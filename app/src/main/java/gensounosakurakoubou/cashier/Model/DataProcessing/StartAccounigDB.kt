@@ -13,6 +13,7 @@ class StartAccounigDB {
         //何もレコードがないときはすぐにレコードを作成する
         if (checkDate()) {
             saveAccouning.saveAccouning()
+            return
         }
         //データが本当に24時間表記か調べて24時間表記に直す
         setTime = checkTime(setTime)
@@ -29,7 +30,11 @@ class StartAccounigDB {
     }
 
     private fun checkDate(): Boolean {
-        return true
+        val accounnigDay = LoadAccouning()
+        if(accounnigDay.getAccounigLastDay() == "") {
+            return true
+        }
+        return false
     }
 
     private fun checkTime(setTime: Int): Int {

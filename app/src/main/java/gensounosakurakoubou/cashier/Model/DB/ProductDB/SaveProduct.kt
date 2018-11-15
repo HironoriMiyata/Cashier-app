@@ -9,7 +9,7 @@ class SaveProduct {
     fun saveProduct(productName: String, productPrice: Int,cost:Int) {
         val loadId = LoadProductID()
         realm = Realm.getDefaultInstance()
-        var id = loadId.findLoadProductID()
+        val id = loadId.findLoadProductID()
         realm.beginTransaction()
         val product = realm.createObject(Product::class.java, id)
         //カウントは計算で使うので最初は０にすること

@@ -30,17 +30,30 @@ class LoadAccouning {
         return day
     }
 
-    fun getAccounigLastDay(): String {
+    fun getAccounigLastDay(): List<Int> {
         val realm = Realm.getDefaultInstance()
         val day = realm.where(Accounting::class.java).findAll()
-
+        var dayList = mutableListOf<Int>()
+        for (id in day) {
+            dayList.add(Integer.parseInt(id.day))
+        }
         realm.close()
 
-        return ""
+        return dayList
     }
 
-    private fun findLastDay() {
+    fun findLastDay(): Int {
+        var day = 0
+        val productID = getAccounigLastDay()
 
+        try {
+            while (day == productID[day]) {
+                day++
+            }
+        } catch (e: IndexOutOfBoundsException) {
+            return day
+        }
+        return day
     }
 
     fun getAccouningHour(getDay: String): String {

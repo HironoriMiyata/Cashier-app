@@ -16,7 +16,6 @@ class SaveAccouning {
         //計算のためにコストとセールは初期値を０にすること
         realm.beginTransaction()
         val accouning = realm.createObject(Accounting::class.java, id)
-        accouning.accountingId = id
         accouning.accountingDay =  DateFormat.format("yyyy/MM/dd", today).toString()
         accouning.day = DateFormat.format("dd", today).toString()
         accouning.hour = DateFormat.format("HH", today).toString()

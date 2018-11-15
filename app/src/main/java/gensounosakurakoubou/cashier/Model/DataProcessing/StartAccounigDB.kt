@@ -31,7 +31,7 @@ class StartAccounigDB {
 
     private fun checkDate(): Boolean {
         val accounnigDay = LoadAccouning()
-        if(accounnigDay.getAccounigLastDay() == "") {
+        if(Integer.toString(accounnigDay.findLastDay()) == "-1") {
             return true
         }
         return false
@@ -50,7 +50,7 @@ class StartAccounigDB {
 
     private fun checkDay(today: String): Boolean {
         val accounnigDay = LoadAccouning()
-        val day = accounnigDay.getAccounigLastDay()
+        val day = Integer.toString(accounnigDay.findLastDay())
         if (Integer.parseInt(day) < Integer.parseInt(today)) {
             return true
         }

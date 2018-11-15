@@ -15,7 +15,7 @@ var all = sum
 var add = 0
 var kosuu = 1
 var addMonmy = 0
-val moneyList: MutableList<String> = mutableListOf("1", "5", "10", "50", "100", "500", "1000", "2000", "5000", "10000")
+var moneyList: MutableList<String> = mutableListOf("10000", "5000", "1000", "500", "100", "50","10","5","1")
 var productPrice = "Noitem"
 
 class CashierActivity : AppCompatActivity() {
@@ -37,7 +37,6 @@ class CashierActivity : AppCompatActivity() {
         val productListView: ListView = findViewById(R.id.productlist)
         productListView.adapter = productArrayAdapter
         val loadProductPrice = LoadProductPrice()
-
         StartDatabase()
 
         productListView.setOnItemClickListener { parent, view, position, id ->

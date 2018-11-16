@@ -1,20 +1,24 @@
 package gensounosakurakoubou.cashier.Model.DataProcessing
 
+import gensounosakurakoubou.cashier.Model.DB.Accounting
 import gensounosakurakoubou.cashier.Model.DB.Product
 import io.realm.Realm
+import java.util.*
 
 class Cost {
 
     fun addCost(productName: String, v: Int): Int {
         //下手にレコードをいじらないようにするための措置
-        if(v == 0) return 0
+        if (v == 0) return 0
         val cost = findCost(productName) * v
+        changeCost(cost)
         return cost
     }
 
     fun subtractionCost(productName: String, v: Int): Int {
-        if(v == 0) return 0
+        if (v == 0) return 0
         val cost = findCost(productName) * v
+        changeCost(cost + (-1))
         return cost
     }
 
@@ -30,5 +34,17 @@ class Cost {
         val productCost = cost!!.productCost
         realm.close()
         return productCost
+    }
+
+    private fun changeCost(getCost:Int) {
+        val getToday = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"), Locale.JAPAN)
+        val realm = Realm.getDefaultInstance()
+        val day = getToday.get(Calendar.DAY_OF_YEAR)
+        val findCost = realm.where(Accounting::class.java)
+                .equalTo("Day", day)
+                .findFirst()
+        val cost = findCost!!.cost
+        findCost.cost = cost + getCost
+        realm.close()
     }
 }

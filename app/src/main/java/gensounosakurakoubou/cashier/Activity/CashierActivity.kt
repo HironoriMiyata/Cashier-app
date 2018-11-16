@@ -8,6 +8,7 @@ import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductName
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductPrice
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.RenewalProductCount
 import gensounosakurakoubou.cashier.Model.DB.StartDatabase
+import gensounosakurakoubou.cashier.Model.DataProcessing.Cost
 import gensounosakurakoubou.cashier.R
 
 var sum = 0
@@ -15,8 +16,9 @@ var all = sum
 var add = 0
 var kosuu = 1
 var addMonmy = 0
-var moneyList: MutableList<String> = mutableListOf("10000", "5000", "1000", "500", "100", "50","10","5","1")
+var moneyList: MutableList<String> = mutableListOf("10000", "5000", "1000", "500", "100", "50", "10", "5", "1")
 var productPrice = "Noitem"
+
 
 class CashierActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,12 +75,13 @@ class CashierActivity : AppCompatActivity() {
 
     }
 
-     private fun addOnClickEvent(v: View?){
-         val addEditText: EditText = findViewById(R.id.addprice)
-         val kosuuEditText: EditText = findViewById(R.id.kosuu)
-         val productTextView: TextView = findViewById(R.id.pricetextview)
-         val allProductTextView: TextView = findViewById(R.id.allpricetextview)
-         val renewalProductCount = RenewalProductCount()
+    private fun addOnClickEvent(v: View?) {
+        val addEditText: EditText = findViewById(R.id.addprice)
+        val kosuuEditText: EditText = findViewById(R.id.kosuu)
+        val productTextView: TextView = findViewById(R.id.pricetextview)
+        val allProductTextView: TextView = findViewById(R.id.allpricetextview)
+        val renewalProductCount = RenewalProductCount()
+        val addcost = Cost()
 
         try {
             add = Integer.parseInt(addEditText.getText().toString())
@@ -86,7 +89,8 @@ class CashierActivity : AppCompatActivity() {
         } catch (e: NumberFormatException) {
 
         }
-        sum = sum + add * kosuu
+        sum += addcost.addCost(productPrice, kosuu)
+
         if (productPrice != "Noitem") {
             renewalProductCount.renewalProductCount(productPrice, kosuu)
         }
@@ -98,21 +102,23 @@ class CashierActivity : AppCompatActivity() {
         productPrice = "Noitem"
     }
 
-    private fun deleteOnClickEvent(v: View?){
+    private fun deleteOnClickEvent(v: View?) {
         val addEditText: EditText = findViewById(R.id.addprice)
         val kosuuEditText: EditText = findViewById(R.id.kosuu)
         val productTextView: TextView = findViewById(R.id.pricetextview)
         val allProductTextView: TextView = findViewById(R.id.allpricetextview)
+        val subtractionCost = Cost()
         add = Integer.parseInt(addEditText.getText().toString())
         kosuu = Integer.parseInt(kosuuEditText.getText().toString())
-        sum = sum - add * kosuu
+        sum = subtractionCost.subtractionCost(productPrice, kosuu)
         productTextView.setText("合計" + Integer.toString(sum))
         all = sum
         allProductTextView.setText("売り上げ合計" + Integer.toString(all))
         kosuuEditText.setText("1")
         addEditText.setText("0")
     }
-    private fun resetDeleteOnClickEvent(v: View?){
+
+    private fun resetDeleteOnClickEvent(v: View?) {
         val addEditText: EditText = findViewById(R.id.addprice)
         val kosuuEditText: EditText = findViewById(R.id.kosuu)
         val productTextView: TextView = findViewById(R.id.pricetextview)

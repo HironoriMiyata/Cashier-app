@@ -9,6 +9,7 @@ import gensounosakurakoubou.cashier.Model.DB.ProductDB.LoadProductPrice
 import gensounosakurakoubou.cashier.Model.DB.ProductDB.RenewalProductCount
 import gensounosakurakoubou.cashier.Model.DB.StartDatabase
 import gensounosakurakoubou.cashier.Model.DataProcessing.Cost
+import gensounosakurakoubou.cashier.Model.DataProcessing.Seles
 import gensounosakurakoubou.cashier.R
 
 var sum = 0
@@ -82,6 +83,7 @@ class CashierActivity : AppCompatActivity() {
         val allProductTextView: TextView = findViewById(R.id.allpricetextview)
         val renewalProductCount = RenewalProductCount()
         val addcost = Cost()
+        val addSeles = Seles()
 
         try {
             add = Integer.parseInt(addEditText.getText().toString())
@@ -89,7 +91,8 @@ class CashierActivity : AppCompatActivity() {
         } catch (e: NumberFormatException) {
 
         }
-        sum += addcost.addCost(productPrice, kosuu)//コストになってる
+        sum += addSeles.addSeles(productPrice, kosuu)
+        addcost.addCost(productPrice, kosuu)//コストになってる
 
         if (productPrice != "Noitem") {
             renewalProductCount.renewalProductCount(productPrice, kosuu)
@@ -108,9 +111,11 @@ class CashierActivity : AppCompatActivity() {
         val productTextView: TextView = findViewById(R.id.pricetextview)
         val allProductTextView: TextView = findViewById(R.id.allpricetextview)
         val subtractionCost = Cost()
+        val subtractionSeles = Seles()
         add = Integer.parseInt(addEditText.getText().toString())
         kosuu = Integer.parseInt(kosuuEditText.getText().toString())
-        sum = subtractionCost.subtractionCost(productPrice, kosuu)//コストになってる
+        sum = subtractionSeles.subtractionSeles(productPrice, kosuu)
+        subtractionCost.subtractionCost(productPrice, kosuu)
         productTextView.setText("合計" + Integer.toString(sum))
         all = sum
         allProductTextView.setText("売り上げ合計" + Integer.toString(all))

@@ -89,7 +89,7 @@ class CashierActivity : AppCompatActivity() {
         } catch (e: NumberFormatException) {
 
         }
-        sum += addcost.addCost(productPrice, kosuu)
+        sum += addcost.addCost(productPrice, kosuu)//コストになってる
 
         if (productPrice != "Noitem") {
             renewalProductCount.renewalProductCount(productPrice, kosuu)
@@ -110,7 +110,7 @@ class CashierActivity : AppCompatActivity() {
         val subtractionCost = Cost()
         add = Integer.parseInt(addEditText.getText().toString())
         kosuu = Integer.parseInt(kosuuEditText.getText().toString())
-        sum = subtractionCost.subtractionCost(productPrice, kosuu)
+        sum = subtractionCost.subtractionCost(productPrice, kosuu)//コストになってる
         productTextView.setText("合計" + Integer.toString(sum))
         all = sum
         allProductTextView.setText("売り上げ合計" + Integer.toString(all))

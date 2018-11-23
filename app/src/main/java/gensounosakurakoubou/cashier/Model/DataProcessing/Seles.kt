@@ -1,23 +1,24 @@
 package gensounosakurakoubou.cashier.Model.DataProcessing
 
+import android.text.format.DateFormat
 import gensounosakurakoubou.cashier.Model.DB.Accounting
 import gensounosakurakoubou.cashier.Model.DB.Product
 import io.realm.Realm
 import java.util.*
 
-class Seles{
+class Seles {
     fun addSeles(productName: String, v: Int): Int {
         //下手にレコードをいじらないようにするための措置
-        if (v == 0) return 0
+        if (v == 0 || productName == "Noitem") return 0
         val seles = findSeles(productName) * v
         changeSeles(seles)
         return seles
     }
 
     fun subtractionSeles(productName: String, v: Int): Int {
-        if (v == 0) return 0
+        if (v == 0 || productName == "Noitem") return 0
         val seles = findSeles(productName) * v
-        changeSeles(seles + (-1))
+        //changeSeles(seles * (-1))
         return seles
     }
 
@@ -35,15 +36,17 @@ class Seles{
         return productSeles
     }
 
-    private fun changeSeles(getseles:Int) {
+    private fun changeSeles(getseles: Int) {
         val getToday = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"), Locale.JAPAN)
         val realm = Realm.getDefaultInstance()
-        val day = getToday.get(Calendar.DAY_OF_YEAR)
-        val findSeles = realm.where(Accounting::class.java)
-                .equalTo("Day", day)
-                .findFirst()
-        val seles = findSeles!!.sales
-        findSeles.sales = seles + getseles
-        realm.close()
+        val today = getToday.time
+        val day = DateFormat.format("dd", today).toString()
+        realm.executeTransaction {
+            val findSeles = realm.where(Accounting::class.java)
+                    .equalTo("day", day)
+                    .findFirst()
+            val seles = findSeles!!.sales + getseles
+            findSeles.sales = seles
+        }
     }
 }

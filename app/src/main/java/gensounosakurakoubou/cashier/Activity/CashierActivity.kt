@@ -114,7 +114,7 @@ class CashierActivity : AppCompatActivity() {
         val subtractionSeles = Seles()
         add = Integer.parseInt(addEditText.getText().toString())
         kosuu = Integer.parseInt(kosuuEditText.getText().toString())
-        sum = subtractionSeles.subtractionSeles(productPrice, kosuu)
+        sum -= subtractionSeles.subtractionSeles(productPrice, kosuu)
         subtractionCost.subtractionCost(productPrice, kosuu)
         productTextView.setText("合計" + Integer.toString(sum))
         all = sum

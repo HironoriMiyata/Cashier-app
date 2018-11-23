@@ -9,16 +9,16 @@ class Cost {
 
     fun addCost(productName: String, v: Int): Int {
         //下手にレコードをいじらないようにするための措置
-        if (v == 0) return 0
+        if (v == 0 || productName == "Noitem") return 0
         val cost = findCost(productName) * v
-        changeCost(cost)
+        //changeCost(cost)
         return cost
     }
 
     fun subtractionCost(productName: String, v: Int): Int {
-        if (v == 0) return 0
+        if (v == 0 || productName == "Noitem") return 0
         val cost = findCost(productName) * v
-        changeCost(cost + (-1))
+        //changeCost(cost * (-1))
         return cost
     }
 
@@ -27,7 +27,7 @@ class Cost {
     }
 
     private fun findCost(productName: String): Int {
-        var realm = Realm.getDefaultInstance()
+        val realm = Realm.getDefaultInstance()
         val cost = realm.where(Product::class.java)
                 .equalTo("productName", productName)
                 .findFirst()
@@ -36,15 +36,15 @@ class Cost {
         return productCost
     }
 
-    private fun changeCost(getCost:Int) {
+    private fun changeCost(getCost: Int) {
         val getToday = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"), Locale.JAPAN)
         val realm = Realm.getDefaultInstance()
-        val day = getToday.get(Calendar.DAY_OF_YEAR)
+        val day = Integer.toString(getToday.get(Calendar.DAY_OF_YEAR))
         val findCost = realm.where(Accounting::class.java)
-                .equalTo("Day", day)
+                .equalTo("day", day)
                 .findFirst()
-        val cost = findCost!!.cost
-        findCost.cost = cost + getCost
+        val cost = findCost!!.cost + getCost
+        findCost.cost = cost
         realm.close()
     }
 }
